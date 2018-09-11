@@ -6,5 +6,5 @@ O objetivo é implementar um compilador.
  
 ###### Linguagem C++;
 #### Por: 
->Cícero Junior
+>Cícero Junior\
 >Enderson Rufino Amorim
