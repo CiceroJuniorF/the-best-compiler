@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1536705764 source:m:\trab\compiler\scan.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"scan.h"
+
+1536705315 m:\trab\compiler\scan.h
+	<stdio.h>
+
