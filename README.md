@@ -4,6 +4,7 @@
 
 O objetivo é implementar um compilador.
  
-> Linguagem C++;
-> Por: Cícero Junior
-> Enderson Rufino Amorim
+###### Linguagem C++;
+#### Por: 
+>Cícero Junior
+>Enderson Rufino Amorim
