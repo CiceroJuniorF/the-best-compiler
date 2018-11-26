@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1540938606 source:c:\users\james\dropbox\unasp\disciplinas\compiladores\projeto\v2\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<list>
+	"scan.h"
+
+1540932139 c:\users\james\dropbox\unasp\disciplinas\compiladores\projeto\v2\scan.h
+	<stdio.h>
+
+1536205856 source:c:\users\james\dropbox\unasp\disciplinas\compiladores\projeto\v2\scan.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"scan.h"
+
+1543189579 source:c:\users\rikud\documents\faculdade\compiladores\v2\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<list>
+	"scan.h"
+	<cstdlib>
+
+1540935740 c:\users\rikud\documents\faculdade\compiladores\v2\scan.h
+	<stdio.h>
+
+1536209456 source:c:\users\rikud\documents\faculdade\compiladores\v2\scan.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"scan.h"
+

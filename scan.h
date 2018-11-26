@@ -3,14 +3,15 @@
 #ifndef SCAN_H
 #define SCAN_H
 
-// declaraÁ„o de constantes
+// declara√ß√£o de constantes
 #define MAXNUM 9
 #define MAXOP 2
 #define MAXNAME 255
+#define TAMSTR 50
 
 
 
-// declaraÁ„ de tipos
+// declara√ß√£ de tipos
 
 typedef struct tokens{
 int id;
@@ -21,7 +22,17 @@ struct tokens *prox;
 }Tk;
 
 
-// declaraÁ„o das funÁıes globais
+typedef struct simbolos{
+int n; // n√∫mero
+int id; // ponteiro=0, constante=1, vari√°vel=2
+int linha;
+char *nome;
+int tipo; // int =0, char = 1, float = 2, double=3, struct =4
+int bytes; //
+}simbolos;
+
+
+// declara√ß√£o das fun√ß√µes globais
 Tk *getTokens(char *nome);
 void insereTk(Tk *TkList, Tk *elemento );
 void exibeTk(Tk *TkList);
