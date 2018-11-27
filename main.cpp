@@ -39,13 +39,13 @@ int ehOp(char c);
 int main(int argc, char *argv[])
 {
 
-    char arq[50] = "arquivo.c";
-    ;
+    char arq[50];
+    
     char *var;
     if (argc != 2)
     {
         printf("digite o nome do arquivo:");
-        //scanf("%s", arq);
+        scanf("%s", arq);
     }
     else
     {
@@ -56,7 +56,6 @@ int main(int argc, char *argv[])
     exibeTk(listTokens);
     loadId();
     loadPr();
-    //
     analiseLexica();
     liberaTk(listTokens);
 
@@ -71,10 +70,6 @@ void carregaRW()
 
 void analiseLexica()
 {
-
-    //for(list = tokens; list != NULL; list=list->prox) {
-    //
-    //}
     Tk *ptr;
     int aux = 0, lx;
 
@@ -82,46 +77,34 @@ void analiseLexica()
     for (ptr = listTokens; ptr != NULL; ptr = ptr->prox)
     {
 
-        //ptr->nome;
+       
         printf("Nome: %s\n", ptr->nome);
-        //system("pause");
+        
         if (ptr->linha != aux)
         {
             //printf("\n");
             aux = ptr->linha;
         }
         lx = buscaId(ptr->nome);
+
         printf("return busca: %d\n", lx);
         // teste se � um id
         if (lx)
-        {
-            printf("entrou....%s\n", ptr->nome);
-            //exit(1);
-            //for( ; ;)
-            //{
+        {          
+
             ptr = lexaId(ptr->prox);
-            //}
         }
-        // testa par saber se � um if ou while
-        if (strcmp("if", ptr->nome) == 0 || strcmp("while", ptr->nome) == 0)
+        // testa par saber se � um if ou while ou switch ou for
+        if (strcmp("if", ptr->nome) == 0 || strcmp("while", ptr->nome) == 0 || strcmp("switch", ptr->nome) == 0 || strcmp("for", ptr->nome) == 0)
         {
-            printf("\nEncontrado, %s", ptr->nome);
+            printf("\nEncontrado, %s \n", ptr->nome);
             ptr = lexaPr(ptr->prox, ptr->nome);
         }
 
-        // testa para saber se � um for
-
-        // testa para saber se � uma express�o de atribui��o
-        //printf("aqui 2\n");
-        //printf("%s ", ptr->nome);
     }
-    //printf("aqui 3\n");
+
 }
-// fun�ao implementada depois da aula******************
-// fun�ao implementada depois da aula******************
-// fun�ao implementada depois da aula******************
-// fun�ao implementada depois da aula******************
-//           23 / 10
+
 Tk *lexaId(Tk *ptr)
 {
     // Tk *aux;
@@ -172,8 +155,6 @@ Tk *lexaPr(Tk *ptr, char *nome)
     int contador = 0;
     char *tipo;
     int lx;
-    // Tk *aux;
-    // loop no infinito
     for (;;)
     {
 
@@ -185,6 +166,9 @@ Tk *lexaPr(Tk *ptr, char *nome)
         {
             printf("\nErro linha: %d, caractere: %s invalido. Esperado um ( \n", ptr->linha, ptr->nome);
             verificador = 0;
+            system("pause");
+            exit(1);
+            
         }
 
         if (ptr->nome[0] == '(')
@@ -331,7 +315,7 @@ Tk *lexaPr(Tk *ptr, char *nome)
  ********************************/
 int ehOp(char c)
 {
-    return (strchr("&|><=!", c) != NULL);
+    return (strchr("&|><=!+*/%", c) != NULL);
 }
 
 int verificaOperadores(Tk *ptr)
